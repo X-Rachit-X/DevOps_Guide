@@ -1,0 +1,7 @@
+containers:
+  - name: api
+    image: my-api:1.0
+
+    volumeMounts:
+      - name: app-data
+        mountPath: /app/data

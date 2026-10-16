@@ -1,0 +1,5 @@
+- name: Install package on Debian
+  apt:
+    name: nginx
+    state: present
+  when: ansible_os_family == "Debian"

@@ -1,0 +1,9 @@
+{
+  "level": "info",
+  "event": "request_completed",
+  "requestId": "abc123",
+  "method": "GET",
+  "path": "/orders/123",
+  "statusCode": 200,
+  "durationMs": 84
+}

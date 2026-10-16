@@ -1,0 +1,8 @@
+{
+  "level": "info",
+  "requestId": "abc123",
+  "method": "POST",
+  "path": "/orders",
+  "statusCode": 201,
+  "durationMs": 82
+}

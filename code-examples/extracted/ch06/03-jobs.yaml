@@ -1,0 +1,7 @@
+jobs:
+  test:
+    ...
+
+  build:
+    needs: test
+    ...

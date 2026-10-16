@@ -1,0 +1,17 @@
+git status
+git add
+git commit
+git log
+git diff
+git fetch
+git pull
+git push
+git branch
+git switch
+git merge
+git rebase
+git stash
+git cherry-pick
+git reset
+git revert
+git reflog

@@ -1,0 +1,6 @@
+{
+  "level": "error",
+  "event": "database_connection_failed",
+  "requestId": "abc123",
+  "timestamp": "2026-09-19T10:30:00Z"
+}

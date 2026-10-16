@@ -1,0 +1,55 @@
+// Reference model matching Chapter 35 section 9 conceptually. The starter code uses plain SQL (db/init.sql)
+// so it needs no code generation; use this file if you prefer Prisma.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+
+model Product {
+  id        Int         @id @default(autoincrement())
+  name      String
+  price     Decimal
+  stock     Int         @default(0)
+  createdAt DateTime    @default(now())
+  items     OrderItem[]
+}
+
+model Order {
+  id             Int         @id @default(autoincrement())
+  userId         Int
+  user           User        @relation(fields: [userId], references: [id])
+  status         OrderStatus @default(PENDING)
+  totalAmount    Decimal
+  idempotencyKey String?     @unique
+  createdAt      DateTime    @default(now())
+  items          OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Decimal
+}

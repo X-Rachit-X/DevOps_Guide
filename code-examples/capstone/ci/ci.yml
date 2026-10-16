@@ -1,0 +1,38 @@
+# Copy to .github/workflows/ci.yml in your own repo.
+# Editorial example following Chapter 35 sections 48-52 (OIDC, immutable git-SHA tags).
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+  id-token: write   # required for OIDC to AWS
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+  push-image:
+    needs: test-build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::<account-id>:role/<github-oidc-role>   # placeholder
+          aws-region: ap-south-1
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - run: |
+          IMAGE=${{ steps.ecr.outputs.registry }}/order-platform:${{ github.sha }}
+          docker build -t "$IMAGE" .
+          docker push "$IMAGE"

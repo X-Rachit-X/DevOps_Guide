@@ -1,0 +1,5 @@
+stage('Docker Push') {
+    steps {
+        sh 'docker push my-api:${BUILD_NUMBER}'
+    }
+}

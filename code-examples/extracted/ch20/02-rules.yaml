@@ -1,0 +1,6 @@
+rules:
+  - host: api.example.com
+    ...
+
+  - host: admin.example.com
+    ...

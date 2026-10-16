@@ -1,0 +1,42 @@
+pipeline {
+
+    agent any
+
+    environment {
+        IMAGE = "my-api:${GIT_COMMIT}"
+    }
+
+    stages {
+
+        stage('Test') {
+            steps {
+                sh 'npm ci'
+                sh 'npm test'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Docker') {
+            steps {
+                sh "docker build -t ${IMAGE} ."
+            }
+        }
+
+        stage('Push') {
+            steps {
+                sh "docker push ${IMAGE}"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'kubectl apply -f k8s/'
+            }
+        }
+    }
+}
