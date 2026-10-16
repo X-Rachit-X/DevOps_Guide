@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps for SDEs — Knowledge Base</title>
+<meta name="description" content="A complete, searchable DevOps knowledge base for software engineers: Linux to Kubernetes, AWS, Terraform, GitOps, SRE and virtualization internals.">
+<script>
+  // Apply the saved/preferred theme before first paint (no flash).
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('kb-theme'); } catch (e) {}
+    if (!t) t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+<link id="hljs-theme" rel="stylesheet" href="vendor/hljs-light.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="topbar">
+  <button id="menu-btn" class="icon-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
+  <a class="brand" href="#/">DevOps for SDEs <span>Knowledge Base</span></a>
+  <form id="search-form" class="search" role="search" autocomplete="off">
+    <input id="search-input" type="search" placeholder="Search all chapters…  ( press / )" aria-label="Search">
+  </form>
+  <div class="progress-pill" id="progress-pill" title="Chapters marked complete">0 / 0</div>
+  <button id="theme-btn" class="icon-btn" aria-label="Toggle light/dark theme" title="Toggle theme">◐</button>
+</header>
+
+<div class="layout">
+  <nav id="sidebar" class="sidebar" aria-label="Chapters"></nav>
+  <div id="scrim" class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <noscript><p>This site needs JavaScript. You can also read the Markdown files directly in the repository.</p></noscript>
+    <p class="loading">Loading…</p>
+  </main>
+  <aside id="toc" class="toc" aria-label="On this page"></aside>
+</div>
+
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+{
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Cloud + DevOps Fundamentals",
+   "path": "docs/01-foundations/ch01-cloud-devops-fundamentals.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "I",
+   "revision": "revision/ch01-revision.md"
+  },
+  {
+   "n": 2,
+   "title": "Linux for Cloud & DevOps",
+   "path": "docs/01-foundations/ch02-linux.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "I",
+   "revision": "revision/ch02-revision.md"
+  },
+  {
+   "n": 3,
+   "title": "Bash & Linux Automation",
+   "path": "docs/01-foundations/ch03-bash-automation.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "I",
+   "revision": "revision/ch03-revision.md"
+  },
+  {
+   "n": 4,
+   "title": "Networking for Cloud & DevOps",
+   "path": "docs/01-foundations/ch04-networking.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "I",
+   "revision": "revision/ch04-revision.md"
+  },
+  {
+   "n": 5,
+   "title": "Git & GitHub Deep Dive",
+   "path": "docs/01-foundations/ch05-git-github.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "I",
+   "revision": "revision/ch05-revision.md"
+  },
+  {
+   "n": 6,
+   "title": "CI/CD + GitHub Actions",
+   "path": "docs/03-cicd-gitops/ch06-cicd-github-actions.md",
+   "domain": "03-cicd-gitops",
+   "domainTitle": "CI/CD and GitOps",
+   "part": "I",
+   "revision": "revision/ch06-revision.md"
+  },
+  {
+   "n": 7,
+   "title": "Docker Fundamentals",
+   "path": "docs/02-containers/ch07-docker-fundamentals.md",
+   "domain": "02-containers",
+   "domainTitle": "Containers",
+   "part": "I",
+   "revision": "revision/ch07-revision.md"
+  },
+  {
+   "n": 8,
+   "title": "Docker Deep Dive + Production",
+   "path": "docs/02-containers/ch08-docker-production.md",
+   "domain": "02-containers",
+   "domainTitle": "Containers",
+   "part": "I",
+   "revision": "revision/ch08-revision.md"
+  },
+  {
+   "n": 9,
+   "title": "AWS Fundamentals + IAM",
+   "path": "docs/04-aws/ch09-aws-fundamentals-iam.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch09-revision.md"
+  },
+  {
+   "n": 10,
+   "title": "EC2 + AWS Compute",
+   "path": "docs/04-aws/ch10-ec2-compute.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch10-revision.md"
+  },
+  {
+   "n": 11,
+   "title": "S3 + AWS Storage",
+   "path": "docs/04-aws/ch11-s3-storage.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch11-revision.md"
+  },
+  {
+   "n": 12,
+   "title": "VPC + AWS Networking",
+   "path": "docs/04-aws/ch12-vpc-networking.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch12-revision.md"
+  },
+  {
+   "n": 13,
+   "title": "RDS + Databases on AWS",
+   "path": "docs/04-aws/ch13-rds-databases.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch13-revision.md"
+  },
+  {
+   "n": 14,
+   "title": "Load Balancing + Scaling",
+   "path": "docs/04-aws/ch14-load-balancing-scaling.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch14-revision.md"
+  },
+  {
+   "n": 15,
+   "title": "Lambda + Serverless + Messaging",
+   "path": "docs/04-aws/ch15-lambda-serverless-messaging.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch15-revision.md"
+  },
+  {
+   "n": 16,
+   "title": "Route 53 + CloudFront + CDN + WAF",
+   "path": "docs/04-aws/ch16-route53-cloudfront-waf.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch16-revision.md"
+  },
+  {
+   "n": 17,
+   "title": "AWS Monitoring + Security",
+   "path": "docs/04-aws/ch17-monitoring-security.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "I",
+   "revision": "revision/ch17-revision.md"
+  },
+  {
+   "n": 18,
+   "title": "Kubernetes Fundamentals",
+   "path": "docs/05-kubernetes/ch18-kubernetes-fundamentals.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "I",
+   "revision": "revision/ch18-revision.md"
+  },
+  {
+   "n": 19,
+   "title": "Kubernetes Configuration + Storage",
+   "path": "docs/05-kubernetes/ch19-kubernetes-config-storage.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "I",
+   "revision": "revision/ch19-revision.md"
+  },
+  {
+   "n": 20,
+   "title": "Kubernetes Networking + Scaling + Production",
+   "path": "docs/05-kubernetes/ch20-kubernetes-networking-scaling.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "I",
+   "revision": "revision/ch20-revision.md"
+  },
+  {
+   "n": 21,
+   "title": "Terraform: Infrastructure as Code",
+   "path": "docs/06-iac-config/ch21-terraform.md",
+   "domain": "06-iac-config",
+   "domainTitle": "Infrastructure as Code and Configuration",
+   "part": "I",
+   "revision": "revision/ch21-revision.md"
+  },
+  {
+   "n": 22,
+   "title": "Observability + Reliability",
+   "path": "docs/07-observability-sre/ch22-observability-reliability.md",
+   "domain": "07-observability-sre",
+   "domainTitle": "Observability and SRE",
+   "part": "I",
+   "revision": "revision/ch22-revision.md"
+  },
+  {
+   "n": 23,
+   "title": "Production Architecture + Troubleshooting",
+   "path": "docs/08-production/ch23-production-architecture-troubleshooting.md",
+   "domain": "08-production",
+   "domainTitle": "Production Architecture",
+   "part": "I",
+   "revision": "revision/ch23-revision.md"
+  },
+  {
+   "n": 24,
+   "title": "Complete Cloud + DevOps Interview & OA Mastery",
+   "path": "docs/09-interview/ch24-interview-oa-mastery.md",
+   "domain": "09-interview",
+   "domainTitle": "Interview and OA Mastery",
+   "part": "I",
+   "revision": "revision/ch24-revision.md"
+  },
+  {
+   "n": 25,
+   "title": "Helm: Kubernetes Package Management",
+   "path": "docs/05-kubernetes/ch25-helm.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "II",
+   "revision": "revision/ch25-revision.md"
+  },
+  {
+   "n": 26,
+   "title": "GitOps + ArgoCD",
+   "path": "docs/03-cicd-gitops/ch26-gitops-argocd.md",
+   "domain": "03-cicd-gitops",
+   "domainTitle": "CI/CD and GitOps",
+   "part": "II",
+   "revision": "revision/ch26-revision.md"
+  },
+  {
+   "n": 27,
+   "title": "Jenkins + Advanced CI/CD",
+   "path": "docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md",
+   "domain": "03-cicd-gitops",
+   "domainTitle": "CI/CD and GitOps",
+   "part": "II",
+   "revision": "revision/ch27-revision.md"
+  },
+  {
+   "n": 28,
+   "title": "Ansible: Configuration Management & Automation",
+   "path": "docs/06-iac-config/ch28-ansible.md",
+   "domain": "06-iac-config",
+   "domainTitle": "Infrastructure as Code and Configuration",
+   "part": "II",
+   "revision": "revision/ch28-revision.md"
+  },
+  {
+   "n": 29,
+   "title": "Kubernetes CRDs + Operators",
+   "path": "docs/05-kubernetes/ch29-crds-operators.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "II",
+   "revision": "revision/ch29-revision.md"
+  },
+  {
+   "n": 30,
+   "title": "Service Mesh + Istio",
+   "path": "docs/05-kubernetes/ch30-service-mesh-istio.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "II",
+   "revision": "revision/ch30-revision.md"
+  },
+  {
+   "n": 31,
+   "title": "Advanced Amazon EKS",
+   "path": "docs/05-kubernetes/ch31-advanced-eks.md",
+   "domain": "05-kubernetes",
+   "domainTitle": "Kubernetes",
+   "part": "II",
+   "revision": "revision/ch31-revision.md"
+  },
+  {
+   "n": 32,
+   "title": "Advanced Terraform",
+   "path": "docs/06-iac-config/ch32-advanced-terraform.md",
+   "domain": "06-iac-config",
+   "domainTitle": "Infrastructure as Code and Configuration",
+   "part": "II",
+   "revision": "revision/ch32-revision.md"
+  },
+  {
+   "n": 33,
+   "title": "Advanced AWS for Backend Engineers",
+   "path": "docs/04-aws/ch33-advanced-aws-backend.md",
+   "domain": "04-aws",
+   "domainTitle": "AWS",
+   "part": "II",
+   "revision": "revision/ch33-revision.md"
+  },
+  {
+   "n": 34,
+   "title": "Advanced SRE",
+   "path": "docs/07-observability-sre/ch34-advanced-sre.md",
+   "domain": "07-observability-sre",
+   "domainTitle": "Observability and SRE",
+   "part": "II",
+   "revision": "revision/ch34-revision.md"
+  },
+  {
+   "n": 35,
+   "title": "DevOps Capstone: Build a Production-Grade Backend Platform",
+   "path": "docs/08-production/ch35-devops-capstone.md",
+   "domain": "08-production",
+   "domainTitle": "Production Architecture",
+   "part": "II",
+   "revision": "revision/ch35-revision.md"
+  },
+  {
+   "n": 36,
+   "title": "Virtualization Internals — Deep Dive",
+   "path": "docs/01-foundations/ch36-virtualization-internals.md",
+   "domain": "01-foundations",
+   "domainTitle": "Foundations",
+   "part": "II",
+   "revision": "revision/ch36-revision.md"
+  }
+ ],
+ "domains": [
+  {
+   "id": "01-foundations",
+   "title": "Foundations"
+  },
+  {
+   "id": "02-containers",
+   "title": "Containers"
+  },
+  {
+   "id": "03-cicd-gitops",
+   "title": "CI/CD and GitOps"
+  },
+  {
+   "id": "04-aws",
+   "title": "AWS"
+  },
+  {
+   "id": "05-kubernetes",
+   "title": "Kubernetes"
+  },
+  {
+   "id": "06-iac-config",
+   "title": "Infrastructure as Code and Configuration"
+  },
+  {
+   "id": "07-observability-sre",
+   "title": "Observability and SRE"
+  },
+  {
+   "id": "08-production",
+   "title": "Production Architecture"
+  },
+  {
+   "id": "09-interview",
+   "title": "Interview and OA Mastery"
+  }
+ ]
+}
