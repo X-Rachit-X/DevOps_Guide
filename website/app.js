@@ -14,7 +14,11 @@
     get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable: app still works */ } },
   };
-  const repoBase = new URL('../', document.baseURI);
+  // repoBase: where markdown paths are resolved from.
+  // - GitHub Pages: index.html is at site root  → './'  (content is alongside index.html)
+  // - Local dev:    index.html is in website/    → '../' (content is in parent dir)
+  const _p = location.pathname.replace(/\/index\.html$/, '/');
+  const repoBase = _p.endsWith('/website/') ? new URL('../', document.baseURI) : new URL('./', document.baseURI);
   const SITE = 'DevOps for SDEs';
 
   const REFERENCE = [
