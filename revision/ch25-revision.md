@@ -139,7 +139,7 @@ Create chart → inspect → `helm lint .` → `helm template my-api .` → `hel
 
 ## Added notes (not in source)
 
-- `toYaml .Values.resources | nindent 12` converts the values map to YAML and indents it 12 spaces on a new line; `{{-` trims preceding whitespace. Other common template pieces: `_helpers.tpl` with `define`/`include`, `default`, `quote`, `required`, `if`, `range`, `with`.
+- `{% raw %}{{ toYaml .Values.resources | nindent 12 }}{% endraw %}` converts the values map to YAML and indents it 12 spaces on a new line; `{% raw %}{{-{% endraw %}` trims preceding whitespace. Other common template pieces: `_helpers.tpl` with `define`/`include`, `default`, `quote`, `required`, `if`, `range`, `with`.
 - Exact precedence (low → high): chart `values.yaml` < parent chart values < `-f` files (later files override earlier) < `--set`/`--set-string`/`--set-file` (later flags win).
 - `helm rollback` creates a **new revision** that re-applies an old one (history is preserved). Helm 3 has no Tiller; release state is stored as **Secrets** in the release namespace (`sh.helm.release.v1.<name>.v<rev>`).
 - CI hardening flags: `--atomic` (roll back automatically on failure), `--wait`, `--timeout`. The `helm diff` plugin previews changes; `helm test` runs chart tests; chart **hooks** run Jobs before/after install/upgrade (e.g. DB migrations). `helm dependency update` writes `Chart.lock`.
