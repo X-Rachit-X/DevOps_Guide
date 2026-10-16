@@ -1,0 +1,5 @@
+- name: Start API
+  systemd:
+    name: my-api
+    state: started
+    enabled: true

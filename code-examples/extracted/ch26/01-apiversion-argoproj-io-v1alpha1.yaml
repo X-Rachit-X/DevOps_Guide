@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: my-api
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/example/my-gitops-repo.git
+    targetRevision: main
+    path: apps/my-api
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+
+  syncPolicy:
+    automated: {}

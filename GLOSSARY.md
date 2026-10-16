@@ -1,0 +1,934 @@
+# Glossary
+
+Terminology, abbreviations and technical vocabulary from all 36 chapters, alphabetical. The number in
+brackets is the chapter in which the term is defined or used most clearly; when the same term appears in
+several chapters each definition is listed.
+
+**Jump to:** [#](#symbols) · [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#g) · [H](#h) · [I](#i) · [J](#j) · [K](#k) · [L](#l) · [M](#m) · [N](#n) · [O](#o) · [P](#p) · [Q](#q) · [R](#r) · [S](#s) · [T](#t) · [U](#u) · [V](#v) · [W](#w) · [X](#x) · [Z](#z)
+
+## Symbols
+
+- **0.0.0.0 vs 127.0.0.1** — Listening on 0.0.0.0 = all IPv4 interfaces; 127.0.0.1 = loopback only. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **409 Conflict** — HTTP status indicating the request conflicts with the current state of the resource. *([Ch 24](docs/09-interview/ch24-interview-oa-mastery.md))*
+- **502 Bad Gateway** — Proxy/LB received an invalid response from upstream. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+
+## A
+
+- **AAAA record** — DNS record mapping a name to IPv6. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Absolute path** — Path starting from `/`. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Access entries (EKS)** — EKS mechanism mapping IAM principals to Kubernetes permissions (supplement). *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **ACM** — AWS Certificate Manager for TLS certificates. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Active-active** — Multiple environments serve traffic simultaneously. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Admission webhook** — Webhook validating or mutating objects before persistence (awareness). *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Agentless** — No persistent agent software required on managed nodes. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **ALB** — Application Load Balancer: Layer 7 HTTP/HTTPS load balancer with path/host routing. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Alert fatigue** — Engineers ignoring alerts because too many are not actionable. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Alias record** — Route 53 record type pointing a name at supported AWS resources. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Alpine** — Very small Linux distribution using musl libc; native deps may differ. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Amazon VPC CNI** — EKS networking plugin giving Pods VPC IP addresses via ENIs. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Ambient mesh** — Istio mode providing mesh functions without per-Pod sidecars. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **AMI** — Amazon Machine Image: template (OS, software, config) used to launch instances. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Ansible** — Agentless automation and configuration-management tool using YAML playbooks over SSH. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Ansible Galaxy** — Repository/ecosystem of reusable roles. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Ansible Vault** — Encryption of sensitive Ansible variables and files. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **API Gateway**
+  - AWS service exposing HTTP APIs that can invoke Lambda. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+  - Managed API entry layer: routing, auth integration, throttling, API lifecycle. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **API Server** — Main interface to Kubernetes; kubectl talks to it. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Application metrics** — Custom metrics such as request_count, request_latency, error_count. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **ApplicationSet** — ArgoCD generator creating many Applications (awareness). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **apply -refresh-only** — Update state from real infrastructure without changing resources. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **App-of-Apps** — ArgoCD pattern where one Application manages other Applications (awareness). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **appVersion** — Version of the application packaged by the chart (distinct from chart version). *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **archiveArtifacts** — Pipeline step saving build output to a Jenkins build. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **A record** — DNS record mapping a name to IPv4. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **ArgoCD** — Declarative GitOps continuous-delivery tool for Kubernetes. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **ArgoCD Application** — Custom resource linking a Git repo/path to a cluster/namespace. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Argo Rollouts** — Progressive-delivery controller (canary/blue-green) (awareness). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **ARN** — Amazon Resource Name: unique identifier of an AWS resource. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Artifact (build)** — Saved output of a build (dist/, binaries, reports) usable by later stages. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Asynchronous processing** — Accepting work quickly and processing it later via a queue. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Aurora** — AWS-built MySQL/PostgreSQL-compatible relational database. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Authentication** — Proving who you are. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Authorization** — Determining what you are allowed to do. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **AuthorizationPolicy** — Istio resource defining allowed service-to-service access (supplement). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Automated backups** — Ongoing RDS backups enabling point-in-time recovery. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Automated sync** — ArgoCD syncing automatically when Git changes (syncPolicy.automated). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Auto Scaling** — Automatically adding/removing instances with load. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Auto Scaling Group (ASG)** — Group of EC2 instances whose count is adjusted automatically. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Availability (formula)** — Uptime / Total Time; or successful requests / total requests. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Availability (storage)** — How often the data/service is accessible. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Availability Zone (AZ)** — An isolated infrastructure location within a region. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **AWS** — Amazon Web Services: cloud platform of infrastructure and managed services. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **AWS account** — Security and billing boundary containing AWS resources. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **AWS CLI** — Command-line interface to the AWS API. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **AWS Config** — Service tracking resource configuration/compliance (awareness). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **AWS Load Balancer Controller**
+  - Controller integrating AWS ALB/NLB with Kubernetes Ingress/Services. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+  - Controller creating ALB/NLB from Kubernetes Ingress/Service resources. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **AWS Managed Rules** — Prebuilt WAF rule groups for common attacks. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **AWS Nitro** — AWS architecture that offloads virtualization, networking and storage functions to dedicated hardware and firmware. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **AWS Organizations** — Service to group and manage multiple AWS accounts. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **AWS SDK** — Libraries (e.g. @aws-sdk/client-s3) that use standard credential providers. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+
+## B
+
+- **Backend (Terraform)** — Determines where Terraform stores state and how state operations work (e.g. S3). *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Backpressure** — Limiting upstream load to protect slower downstream components. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **base64** — Reversible encoding (not encryption) used in Secret manifests. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Bash** — The most common Linux shell. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **become** — Ansible privilege escalation (like sudo). *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Bind mount** — Maps a host path into a container. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Blast radius** — Extent of damage if an identity/component is compromised. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Blast radius (Terraform)** — How much infrastructure a mistake in one state/apply can affect. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Blob / Tree (Git objects)** — Blob stores file contents; tree represents a directory referencing blobs/trees. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Block Public Access** — S3 controls that prevent public access to buckets/objects. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Block storage** — Disk-like storage (EBS) used as a virtual hard drive. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Blue-Green deployment** — Two environments; switch traffic from old (blue) to new (green); easy switch-back. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Blue Ocean** — Jenkins pipeline UI (awareness). *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Bootstrap problem** — The state bucket must exist before Terraform can use it as a backend. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Bottleneck** — Component limiting overall system capacity. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Branch** — Movable pointer/reference to a commit. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Bucket** — Container for S3 objects. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Bucket policy** — Resource-based policy attached to an S3 bucket. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Build context** — Directory (usually `.`) whose files are available to docker build. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Builder stage** — Stage containing compilers/dev dependencies used to produce build output. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Bulkhead** — Isolating resource pools to contain failures. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Burn rate** — Rate at which the error budget is consumed; observed error rate / allowed error rate. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Burn-rate alert** — Alert when the error budget is being consumed too quickly. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+
+## C
+
+- **Cache-aside** — Check cache first, on miss read DB and populate cache. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Cache (CI)** — Reusing downloaded dependencies between runs; must be keyed correctly. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Cache-Control** — HTTP header controlling caching behavior. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Cache hit** — Content served from the edge cache. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Cache hit / miss** — Request served from cache vs falling through to the database. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Cache invalidation**
+  - Removing cached objects from CloudFront edges. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+  - Removing/updating stale cache entries when data changes. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Cache miss** — Content not cached; fetched from the origin. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Cache stampede** — Many requests missing an expired cache entry and hitting the DB at once. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Canary deployment** — Send a small percentage of traffic to the new version and increase if healthy. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Capacity planning** — Ensuring infrastructure can handle expected demand; identify the limiting resource. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Capstone project**
+  - One realistic end-to-end backend project combining Git, Docker, CI/CD, AWS/Kubernetes, Terraform and observability. *([Ch 24](docs/09-interview/ch24-interview-oa-mastery.md))*
+  - One end-to-end production-style project combining code, containers, CI, AWS, Kubernetes, deployment and observability. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Cascading failure** — One service's failure propagating through dependent services. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **CDN** — Content Delivery Network caching content near users. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **cgroups (control groups)** — Linux kernel feature limiting and accounting resources (CPU, memory, I/O, processes) for a group of processes. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Chaos engineering** — Intentionally injecting failures to validate resilience. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Chart (Helm)** — Package of templates, values, metadata and optional dependencies. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Chart repository** — Location distributing packaged charts (helm repo add). *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Chart.yaml** — Chart metadata: name, version, appVersion, description, type. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Check mode** — ansible-playbook --check: simulate without applying changes. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Cherry-pick** — Applies the change of one commit as a new commit on the current branch. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **CI** — Continuous Integration: frequent integration into a shared repo with automatic checks. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **CIDR** — Classless Inter-Domain Routing; `/n` notation giving the number of network-prefix bits. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Circuit breaker** — Pattern stopping calls to a failing dependency (CLOSED, OPEN, HALF-OPEN). *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Cloud computing** — Using computing resources (compute, storage, databases, networking, ...) over a network instead of owning the physical infrastructure. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **CloudFormation** — AWS-native Infrastructure as Code service. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **CloudFront** — AWS CDN using edge locations. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **CloudTrail** — Records AWS API/account activity for auditing. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **CloudWatch** — AWS monitoring platform: metrics, logs, alarms, dashboards. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **CloudWatch Agent** — Agent on EC2 that sends extra logs and system metrics to CloudWatch. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **CloudWatch Alarm** — Rule watching a metric against a threshold and triggering actions. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **CloudWatch Dashboard** — Combined view of metrics and alarms. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Cluster** — A Kubernetes environment: control plane plus worker nodes. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Cluster Autoscaler** — Scales existing node groups based on unschedulable Pods and utilization. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **ClusterIP** — Service type reachable only inside the cluster. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **CMD** — Dockerfile instruction defining the default process at container start. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **CNAME** — DNS record mapping one name to another name. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **CNI** — Container Network Interface: standard for configuring container networking. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Cold start** — Latency of initializing a new execution environment. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Command substitution** — `$(command)` inserts a command's output into another command or variable. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Command vs event** — Instruction to do something vs fact that something happened. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Commit** — Immutable snapshot of project state with metadata and parent link(s), identified by a hash. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Compensating action** — Undo step for a completed part of a failed workflow (e.g. refund). *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Compute optimized** — Instance family for CPU-heavy workloads. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Conditions (Kubernetes)** — Status entries (type/status) communicating state such as Ready. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **ConfigMap** — Object holding non-sensitive configuration. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Configuration management** — Automating and keeping consistent the configuration of machines and software. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Connection pool** — Set of reusable database connections shared by requests. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Connection pool exhaustion** — Total connections (instances x pool size) exceeding DB limits. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Container** — Packaging of an application with its dependencies into a standardized environment sharing the host kernel. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **containerd** — CRI-compatible container runtime used by many clusters. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Container (Docker)** — Isolated process environment sharing the host kernel; a running or created instance of an image. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Container (kernel view)** — Isolated process group sharing the host kernel via namespaces and cgroups; no guest kernel. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Container orchestration** — Automating deployment, scaling, networking and healing of containers across machines. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Container registry** — Storage for Docker images (GHCR, Amazon ECR, Docker Hub). *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Content-hashed filename** — Asset name containing a hash so a new version gets a new URL. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Continuous Delivery** — Code is automatically built/tested and ready for release; production deployment needs approval. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Continuous Deployment** — Production deployment happens automatically after the pipeline passes. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Controller** — Loop that watches resources and reconciles actual state toward desired state. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Controller Manager** — Runs controllers reconciling desired and actual state. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **controller-runtime** — Go library underlying Kubebuilder/Operator SDK controllers. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Control loop** — Observe, compare desired vs actual, act, repeat. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Control node** — Machine from which Ansible commands are run. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Control plane**
+  - Components managing the cluster: API server, scheduler, controller manager, etcd. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+  - Components that configure and manage the data plane. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Conversion webhook** — Webhook converting custom resources between CRD versions (awareness). *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **COPY** — Dockerfile instruction copying files from build context into the image. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Copy-on-write (virtual disks)** — Technique storing only changed blocks on top of a base image, making VM cloning fast. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **CoreDNS** — Cluster DNS provider for service discovery. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Correlation ID** — Request identifier propagated across services for log correlation. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **count** — Meta-argument creating N instances indexed by number. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **CPU overcommitment (oversubscription)** — Assigning more vCPUs than physical cores, relying on VMs not peaking simultaneously; causes contention if they do. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **CPU pinning (CPU affinity)** — Associating a VM's vCPUs with specific physical cores for predictable performance. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **CrashLoopBackOff** — Pod state where a container repeatedly crashes and restarts with back-off. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **CRD** — Custom Resource Definition: extends the Kubernetes API with a new resource type. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **CRD validation (openAPIV3Schema)** — Schema constraining valid custom resource fields. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **create_before_destroy** — Lifecycle setting creating the replacement before destroying the old resource. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **cron** — Linux scheduler; five-field time spec edited via `crontab -e`. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **CronJob** — Kubernetes object running Jobs on a schedule. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **CSI** — Container Storage Interface standardizing Kubernetes storage plugins. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **CSI driver** — Container Storage Interface plugin connecting Kubernetes to storage (EBS/EFS). *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Custom Resource (CR)** — An instance of a resource type defined by a CRD. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+
+## D
+
+- **DaemonSet** — Runs a Pod on each matching node. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Database migration** — Controlled, versioned schema change (Prisma Migrate, Knex, etc.). *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Data plane** — Components that handle actual traffic (Envoy proxies). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Data source (Terraform)** — Reads existing information from a provider without creating it. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Dead Letter Queue (DLQ)** — Queue holding messages that repeatedly failed processing. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Declarative configuration** — Describing the desired end state rather than steps. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Declarative pipeline** — Structured Jenkinsfile syntax: pipeline/agent/stages/stage/steps. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Default route** — 0.0.0.0/0: used when no more specific route matches. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Defense in depth** — Multiple layered security controls. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Dependency failure matrix** — Table of each dependency's failure strategy (retry, fallback, queue, fail fast). *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Dependency graph (Terraform)** — Graph of resource dependencies used to order and parallelize operations. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **depends_on**
+  - Compose start-order dependency; does not guarantee readiness. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+  - Explicit dependency between resources. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Deployment** — Controller maintaining a desired number of Pod replicas and managing rollouts. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Deprecated API** — Kubernetes API version removed in later releases, breaking old manifests. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Depth tiers (Master/Strong/Awareness)** — Study-depth classification used to prioritize topics for SWE roles. *([Ch 24](docs/09-interview/ch24-interview-oa-mastery.md))*
+- **Desired state** — Declared target configuration Kubernetes tries to maintain. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **DestinationRule** — Istio resource defining destination subsets and policies. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Detached HEAD** — HEAD pointing directly to a commit rather than a branch. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Detached mode (-d)** — Run container in background. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Detect-Diagnose-Mitigate-Recover-RCA** — The incident lifecycle used for production failures. *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **DevOps** — Practices for how development and operations build, test, deploy and operate software together efficiently and reliably. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **DevSecOps** — Integrating security throughout the whole lifecycle rather than at the end. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Disaster Recovery (DR)** — Ability to recover from a large failure (e.g. a whole region) using infrastructure elsewhere. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Disaster recovery strategies** — Backup and restore, pilot light, warm standby, active-active. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Distributed tracing** — Following a request across multiple services. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **DNS** — Domain Name System; translates names to IPs/other records. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **DNS propagation** — Delay before cached DNS results expire everywhere. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Docker** — Platform/tooling for building, distributing and running applications in containers. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Docker CLI** — Command-line client (docker build/run/ps...) talking to the daemon. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Docker Compose** — Declarative definition of multi-container applications (docker compose up). *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Docker daemon** — Background service that manages images, containers, networks, volumes. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **docker exec** — Run a command inside a running container. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Dockerfile** — File of instructions for building an image. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **.dockerignore** — File listing paths excluded from the build context. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Docker network** — Virtual network for container-to-container communication. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Drift (GitOps)** — Cluster state diverging from the Git-declared state. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Durability** — How unlikely stored data is to be lost. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Dynamic inventory** — Inventory generated from a cloud API instead of a static file. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Dynamic provisioning** — Automatic creation of PVs from a StorageClass when a PVC is created. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **DynamoDB**
+  - AWS managed NoSQL key-value/document database. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+  - Managed NoSQL key-value/document database. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **DynamoDB Streams** — Item-level change stream, e.g. to Lambda. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+
+## E
+
+- **EBS** — Elastic Block Store: persistent block storage for EC2. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **EBS CSI driver** — Plugin letting Kubernetes use EBS volumes. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **EC2** — Elastic Compute Cloud: virtual servers (instances) in AWS. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **EC2 instance** — A virtual machine created from an AMI with a chosen instance type. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **ECR** — Elastic Container Registry: AWS container image registry. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **ECS** — Elastic Container Service: AWS-native container orchestration. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **ECS on EC2 vs Fargate** — You manage EC2 capacity vs AWS manages compute. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **ECS service** — Keeps a desired number of tasks running and integrates with a load balancer. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **ECS task** — Running instance of a task definition (one or more containers). *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Edge location** — AWS point of presence closer to users, used by CloudFront for caching. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **EFS** — Elastic File System: shared file storage across compute. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **EFS CSI driver** — Plugin letting Kubernetes use EFS shared file systems. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **EKS** — Elastic Kubernetes Service: managed Kubernetes control plane on AWS. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **EKS add-ons** — Managed cluster components such as VPC CNI, CoreDNS, kube-proxy, EBS CSI. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **EKS control plane** — AWS-managed Kubernetes API server, scheduler, controllers and etcd. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **EKS Pod Identity** — Newer EKS-native way to associate IAM roles with ServiceAccounts. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **ElastiCache** — Managed caching (Redis/Valkey, Memcached). *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Elastic IP** — Persistent public IPv4 address assignable to an instance. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Elasticity** — Automatic adjustment of resources up and down according to demand. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Elastic Load Balancing (ELB)** — AWS managed load-balancing service family. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **emptyDir** — Temporary Pod-scoped volume deleted with the Pod. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **EndpointSlice** — Kubernetes object listing the Pod endpoints behind a Service. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Endpoints = none** — A Service with no matching Pods (selector/label mismatch). *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **ENI** — Elastic Network Interface; attached to nodes and used for Pod IPs. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **ENTRYPOINT** — Dockerfile instruction defining the always-run executable (see supplement). *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Envelope encryption** — Data key encrypts data; KMS key protects the data key. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **envFrom** — Pod spec field injecting all keys of a ConfigMap/Secret as environment variables. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Environment variable** — Named value in a process environment used for configuration (export PORT=3000). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Envoy** — High-performance proxy used as the Istio data-plane proxy. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Ephemeral build agent** — Short-lived Kubernetes Pod created for a build and removed afterwards. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Error budget** — Allowed unreliability implied by the SLO (1 - SLO) over a period. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Error budget (SRE)** — 1 - SLO: the amount of unreliability the SLO allows over a window. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **etcd** — Distributed key-value store holding cluster state. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **EventBridge**
+  - AWS event bus service for routing events (awareness). *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+  - Event bus with rule-based routing to targets. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Event-driven architecture** — Services communicate through events rather than direct calls. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Eventual consistency** — System components converge to the same state after a delay. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Execution role (Lambda)** — IAM role granting the function permissions. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Exit status (exit code)** — Number returned by every command: 0 = success, non-zero = failure; read with `$?`. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Expand-and-contract** — Migration strategy: add compatible structure, migrate, switch, remove old later. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Explicit deny** — A Deny statement that always overrides any Allow. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Exponential backoff** — Increasing delay between retries. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **EXPOSE** — Dockerfile instruction documenting the intended port; does not publish it. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Express** — Node.js web framework used by the API. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **External Secrets** — Operator syncing secrets from external managers into Kubernetes Secrets. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+
+## F
+
+- **Facts (Ansible)** — Information gathered about managed hosts (OS, IP, memory). *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Fail open / fail closed** — On failure allow access vs deny access. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Failure engineering** — Deliberately inducing failures and documenting detection and recovery. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Failure injection** — Deliberately causing a specific failure (e.g. latency) to test handling. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Fargate** — Serverless compute running Pods without managing EC2 nodes. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Fast-forward merge** — Merge done by just moving the branch pointer; no merge commit. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Fault tolerance** — A system continuing to operate even when some components fail. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Fetch** — Download remote changes without integrating them. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Finalizer** — Marker making Kubernetes wait for cleanup before completing deletion. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Firewall** — Rule-based control of network traffic. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Fix forward (roll forward)** — Shipping a new fix instead of reverting; sometimes safer than rollback. *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **for_each** — Meta-argument creating instances keyed by map/set keys. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Fork** — Your own copy of another repository on the hosting platform. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Forward proxy** — Proxy that acts on behalf of clients. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Four golden signals** — Latency, traffic, errors, saturation. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **FROM** — Dockerfile instruction selecting the base image. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Full device emulation** — Hypervisor pretends to be a real hardware device; highly compatible but higher overhead. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+
+## G
+
+- **Game day** — Planned exercise simulating an incident to practice response. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Gateway endpoint** — VPC endpoint type for S3 and DynamoDB. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **General purpose instances** — Balanced CPU/memory instance family. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Git** — Distributed version-control system that runs locally. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Git Flow** — Branching model with main, develop, feature/*, release/*, hotfix/*. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **GitHub** — Hosted platform for Git repositories and collaboration (PRs, reviews, Actions). *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **GitHub Actions** — GitHub's CI/CD system; workflows triggered by events; files in .github/workflows/. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **GitHub Environments** — development/staging/production targets with own secrets, variables, protection rules and approvals. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **.gitignore** — File listing patterns of untracked files Git should ignore; doesn't untrack already tracked files. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **GitOps** — Operating model where Git holds declarative desired state and controllers continuously reconcile the environment to it. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **GitOps repository** — Repository holding deployment configuration, separate from application source. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Graceful degradation** — Keeping core functionality when non-critical parts fail. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Graceful shutdown** — Handling SIGTERM to finish work and close resources before exit. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Grafana** — Dashboard/visualization tool for metrics and other data sources. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **GSI** — Global Secondary Index: alternative access pattern with different keys. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **GuardDuty** — Threat detection service (awareness). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Guest OS** — The operating system running inside a VM, which believes it owns the hardware. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Guest Physical Address (GPA)** — What the guest OS believes is physical memory. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Guest Virtual Address (GVA)** — Address used by applications inside the VM. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+
+## H
+
+- **Handler** — Task triggered by notify only when a change occurs. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Handler (Lambda)** — The exported function Lambda invokes, e.g. index.handler. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Hardware-assisted virtualization** — CPU extensions (Intel VT-x, AMD-V) letting guest code run efficiently while the hypervisor retains control of privileged operations. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Hardware passthrough** — Assigning a physical device (e.g. GPU) more directly to a VM for performance, at the cost of sharing, migration, management and isolation. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **HCL** — HashiCorp Configuration Language used for Terraform files. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **HEAD** — Pointer to what is currently checked out (normally current branch -> current commit). *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **HEALTHCHECK** — Dockerfile instruction defining how Docker tests application health. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Health check (ALB)** — Periodic request (e.g. GET /health) deciding whether a target receives traffic. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Health live vs ready (capstone)** — /health/live process alive; /health/ready dependencies reachable. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Health status (ArgoCD)** — Healthy, Progressing, Degraded, Missing, Unknown (and Suspended). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Helm** — Package manager, templating and release-management tool for Kubernetes applications. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Helm dependency** — Another chart a chart declares as required. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Helm dry run** — --dry-run: simulate an install/upgrade without applying. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **helm history** — Show revisions of a release. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **helm lint** — Check a chart for problems. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **helm rollback** — Revert a release to an earlier revision. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **helm template** — Render chart manifests locally without installing. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **helm upgrade --install** — Install a release if absent, otherwise upgrade it. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Hidden file** — File whose name begins with `.` (.env, .gitignore, .ssh); shown with `ls -la`. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **High Availability (HA)** — Redundancy so a service stays accessible if a component fails. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Horizontal scaling (scale out)** — Adding more machines, typically behind a load balancer. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Host-based routing** — Routing by hostname. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Host-based routing (Ingress)** — Routing by hostname to different Services. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Hosted zone** — Route 53 container of DNS records for a domain (public or private). *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Host Physical Address (HPA)** — Actual RAM location; GVA → GPA → HPA is the VM memory translation chain. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Hot partition** — One DynamoDB key receiving disproportionate traffic. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **HPA** — Horizontal Pod Autoscaler: adjusts replica count from metrics. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **HTTP** — Hypertext Transfer Protocol; application-layer web protocol. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **HTTPS** — HTTP over TLS. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **HTTP to HTTPS redirect** — Redirecting :80 requests to :443. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Hybrid cloud** — Private infrastructure combined with public cloud (e.g. via VPN). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Hypervisor** — The virtualization layer that creates and manages VMs and controls their access to physical resources. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+
+## I
+
+- **IaaS** — Infrastructure as a Service: rent infrastructure; you manage OS, runtime, app (e.g. EC2). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **IAM** — Identity and Access Management: who are you and what may you do. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **IAM group** — Collection of users sharing attached policies. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **IAM policy** — JSON document defining allowed/denied actions on resources. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **IAM role** — Identity assumable by trusted entities, giving temporary credentials. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **IAM user** — Identity representing a person/persistent identity in an account. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Idempotency** — Processing the same message more than once has the same effect as once. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Idempotency (Ansible)** — Re-running yields the same state without unnecessary changes. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Idempotency-Key** — Client-supplied key letting servers deduplicate retried requests. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Idempotency-Key header** — Client-supplied key letting the API return the existing order for retried POST /orders. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **ignore_changes** — Lifecycle setting ignoring changes to listed attributes. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Image (Docker)** — Immutable packaged template used to create containers. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **ImagePullBackOff / ErrImagePull** — Pod states where the container image cannot be pulled. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Image scanning** — Vulnerability scanning of images for CVEs in OS packages and dependencies. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Immutable image tag** — Unique per-version tag (e.g. commit SHA) instead of mutable `latest`. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Immutable infrastructure** — Replace rather than patch: build a new version and swap out the old. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Implicit dependency**
+  - Dependency inferred from references between resources. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+  - Dependency inferred from attribute references. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Import block** — Declarative Terraform >=1.5 way to import existing resources. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Incident response** — Structured process from alert to mitigation and root-cause analysis. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Infrastructure as Code (IaC)** — Describing infrastructure in code so it can be reviewed, versioned and reproduced (e.g. Terraform). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Ingress** — Kubernetes object defining HTTP/HTTPS routing rules into the cluster. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Ingress Controller** — Component that implements Ingress rules (NGINX, AWS Load Balancer Controller, Traefik). *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Inspector** — Vulnerability scanning service (awareness). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Instance metadata (IMDS)** — Service exposing instance info and role credentials to the instance; use IMDSv2. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Instance profile / EC2 IAM role** — Role attached to an instance providing temporary credentials. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Instance type** — Hardware profile (vCPU, RAM, network) of an instance; grouped in families. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Intel VT-x / AMD-V** — The CPU virtualization extensions of Intel and AMD. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Interface endpoint** — VPC endpoint using private network interfaces for many AWS services. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Internal module** — Company-standard reusable module built by a platform team. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Internet Gateway (IGW)** — VPC component providing Internet connectivity when routes point to it. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Inventory (Ansible)** — List of hosts and groups Ansible manages. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **IOPS** — Input/Output Operations Per Second of storage. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **I/O virtualization** — Mediation of VM disk/network I/O by the hypervisor, reduced in overhead by VirtIO, SR-IOV and hardware assist. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **IP address** — Identifies a network interface at the IP layer (IPv4 32-bit, IPv6 128-bit). *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **IRSA** — IAM Roles for Service Accounts: Pod AWS permissions via OIDC and a ServiceAccount. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Istio** — Popular service mesh using Envoy proxies and the istiod control plane. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **istiod** — Istio control-plane component configuring proxies. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Istio Gateway** — Istio ingress/egress entry point (not a Kubernetes Service). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+
+## J
+
+- **Jenkins** — Open-source general-purpose automation server for CI/CD pipelines. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jenkins agent** — Machine/pod that executes pipeline work. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jenkins controller** — Central Jenkins component managing jobs, scheduling, configuration, credentials and agents. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jenkins credentials store** — Secure storage of secrets injected via withCredentials. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jenkinsfile** — Pipeline-as-code file stored in the repository. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jenkins plugin** — Extension integrating Jenkins with other tools. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Jitter** — Randomness added to retry delays to avoid synchronized retries. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Job**
+  - A unit of a workflow that runs on a runner; independent jobs run in parallel. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+  - Kubernetes object running a task to completion. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **journalctl** — Command to read systemd journal logs (`-u` unit, `-f` follow). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **JWT** — JSON Web Token used for stateless authentication. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+
+## K
+
+- **k6** — Load-testing tool using JavaScript scripts. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Karpenter**
+  - Node provisioning/autoscaling tool for Kubernetes (EKS). *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+  - Node provisioner that launches appropriate capacity for pending Pods. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **KEDA** — Kubernetes Event-driven Autoscaling; scales workloads from queue depth etc. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Kernel** — Core of the OS; manages CPU, memory, processes, filesystems, networking, hardware, system calls. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Key pair** — Public/private SSH keys; private key stays with you, public key on the instance. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **kind** — Kubernetes in Docker: local clusters whose nodes are containers. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **KMS**
+  - AWS Key Management Service for encryption keys. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+  - Key Management Service for cryptographic keys. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Kubebuilder** — Framework for building Kubernetes operators in Go. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **kubectl** — Command-line tool for the Kubernetes API. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **kubectl api-resources** — Lists resource types available in the cluster including CRDs. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **kubectl auth can-i** — Checks whether an identity is permitted an action. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **kubectl logs --previous** — Show logs of the previous (crashed) container instance. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **kubectl top** — Shows CPU/memory usage of Pods or nodes (needs Metrics Server). *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **kubelet** — Node agent ensuring assigned Pods are running. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Kubernetes** — Container orchestration platform managing containers across a cluster. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Kubernetes DNS** — Cluster DNS resolving Service names to Service IPs. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Kubernetes RBAC** — Authorization of access to Kubernetes API resources. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+
+## L
+
+- **Label** — Key-value metadata on Kubernetes objects. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Lambda** — AWS serverless compute service running functions in response to events. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Lambda concurrency** — Number of simultaneous function executions. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Lambda event** — Input payload describing what triggered the function. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Lambda layer** — Shared package of libraries/dependencies attached to functions. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Latency budget** — Allocation of a total latency target across components. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Launch template** — Definition of the instance configuration an ASG launches. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Layer-by-layer troubleshooting** — Checking DNS/TLS, edge, LB, Kubernetes, app, dependencies in order. *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **Layer caching** — Docker reusing unchanged layers; depends on instruction ordering. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Layer (Docker)** — Cacheable filesystem layer produced by a Dockerfile instruction. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Leaky bucket** — Rate-limiting algorithm smoothing traffic to a constant outflow. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Least connections** — Algorithm sending traffic to the server with fewest active connections. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Least outstanding requests** — LB algorithm sending to the target with fewest in-flight requests. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Least privilege** — Grant only the permissions that are required. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Lifecycle policy** — Rules to transition objects between classes or expire them. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Linting** — Static checks for code-quality problems. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Linux distribution** — Kernel packaged with utilities/software (Ubuntu, Debian, Fedora, Arch, Amazon Linux, RHEL). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Listener** — ALB component waiting for traffic on a port/protocol and forwarding per rules. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Little's Law** — L = lambda x W: average items in system = arrival rate x average time in system. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Live migration** — Moving a running VM between physical hosts by copying memory/state while it runs, then a brief pause to finish. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Liveness** — Is the application still alive? *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Liveness probe** — Check deciding whether to restart a container. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Load balancer** — Distributes requests across backend servers; does health checks. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **LoadBalancer (Service)** — Service type provisioning an external cloud load balancer. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Load shedding** — Rejecting excess work to protect a service. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Load shedding (SRE)** — Rejecting excess traffic quickly to protect core service. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Load test** — Test with expected normal/high traffic. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Local route** — Route 10.0.0.0/16 -> local keeping VPC traffic inside the VPC. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Locals** — Named expressions for reuse inside a module. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Log group** — CloudWatch Logs collection/category of logs. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Log levels** — DEBUG, INFO, WARN, ERROR severity categories. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Logs** — Event records answering what happened. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Log stream** — Sequence of log events from one source within a log group. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **LSI** — Local Secondary Index: same partition key, different sort key. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+
+## M
+
+- **MAC address** — Identity of a network interface within a local network segment. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Macie** — Sensitive-data discovery in S3 (awareness). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Managed node** — Machine being configured by Ansible. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Managed Node Group**
+  - EKS-managed group of worker nodes. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+  - EKS-managed lifecycle for a group of EC2 worker nodes. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Matrix strategy** — Runs the same job across multiple configurations (e.g. Node versions). *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **maxPods formula** — ENIs x (IPv4 per ENI - 1) + 2 for VPC CNI default mode (supplement). *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Memory ballooning** — Technique where a guest balloon driver allocates memory so the hypervisor can reclaim the corresponding physical pages. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Memory optimized** — Instance family for RAM-heavy workloads. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Memory overcommitment** — Configuring more total VM memory than physical RAM; managed with ballooning, page sharing, swapping; severe pressure hurts performance. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Merge conflict** — Same lines changed differently in two branches; must be resolved manually. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Metric** — Numeric measurement over time. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Metrics (observability)** — Numeric time-series data answering how much/how often. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Metrics Server** — Cluster component providing resource metrics for HPA and kubectl top. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Min / desired / max capacity** — ASG bounds and normal target count. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Mitigation vs root cause** — Stopping damage now vs understanding why it happened. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Module (Ansible)** — Reusable unit of automation (apt, copy, service, template...). *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Module (Terraform)** — Reusable group of Terraform resources; the root module calls child modules. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Module versioning** — Pinning modules to released versions for controlled promotion. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Monorepo** — Single repository holding multiple apps/packages (apps/api, apps/worker, packages/shared). *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **moved block** — Tells Terraform a resource changed address and is not a new resource. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **MTBF** — Mean Time Between Failures (supplement). *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **mTLS** — Mutual TLS: both sides authenticate and encrypt traffic. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **MTTD** — Mean Time To Detect a problem. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **MTTR** — Mean Time To Recover/Repair/Resolve. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Multi-AZ (RDS)** — Primary plus standby in another AZ for high availability and failover. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Multi-AZ vs multi-region** — Protect against AZ failure vs regional failure (more complex). *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Multipart upload** — Uploading a large object as separately uploaded parts. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Multi-stage build** — Dockerfile with several FROM stages; only needed output is copied into a small final image. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **MX record** — DNS mail-exchange record. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+
+## N
+
+- **Namespace** — Logical partition of cluster resources. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Namespaces** — Linux kernel feature isolating what a process sees: PID, network, mounts, hostname, users, IPC. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **NAT** — Network Address Translation; translates private addresses to public for outbound access. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **NAT Gateway** — Managed NAT allowing private subnets outbound Internet access without inbound reachability. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **needs** — Job keyword creating a dependency on another job. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Nested paging (EPT / NPT)** — Hardware second-level address translation (Intel EPT, AMD NPT) mapping GPA to HPA, avoiding software shadow tables. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Network** — A collection of devices that can communicate with each other. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Network ACL (NACL)** — Stateless subnet-level firewall in AWS. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **NetworkPolicy** — Kubernetes rules controlling which Pods/sources may communicate. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Network segmentation** — Separating tiers with narrow security group rules. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **NLB** — Network Load Balancer: Layer 4 TCP/UDP load balancer. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Node autoscaling** — Adding/removing worker nodes to match Pod demand. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Node IAM role** — IAM role attached to the worker node, shared by workloads unless isolated. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **NodePort** — Service type exposing a port on each node. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Noisy neighbor** — One workload consuming shared resources and harming others. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Non-root container** — Container running the app as an unprivileged user (USER appuser). *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **npm ci** — Clean, lockfile-based install for reproducible CI builds. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **npm ci --omit=dev** — Install production dependencies only. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **NS record** — DNS name-server record. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+
+## O
+
+- **OA (Online Assessment)** — Timed screening test, often MCQ plus coding; this chapter lists high-value DevOps distinctions for it. *([Ch 24](docs/09-interview/ch24-interview-oa-mastery.md))*
+- **Object key** — The name/path-like identifier of an object within a bucket. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Object (S3)** — Data plus key plus metadata stored in a bucket. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Object storage** — Storage of objects accessed via APIs rather than a mounted filesystem. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Observability** — Ability to understand a system's internal state from external outputs (logs, metrics, traces). *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **OIDC (GitHub to AWS)** — Federated identity letting GitHub Actions assume an IAM role with short-lived credentials. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **ok/changed/failed/skipped** — Ansible task result states. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **On-call** — Rotation of engineers responsible for responding to incidents. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **On-Demand** — Pay-per-use EC2 pricing without commitment. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **On-demand vs provisioned capacity** — DynamoDB automatic vs explicitly specified capacity modes. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **OOMKilled**
+  - Container terminated for exceeding its memory limit. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+  - Container terminated for exceeding its memory limit (Kubernetes failure table). *([Ch 24](docs/09-interview/ch24-interview-oa-mastery.md))*
+- **OpenTelemetry (OTel)** — Vendor-neutral framework for traces, metrics and logs. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **OpenTofu** — Open-source fork of Terraform. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Operator** — Controller encoding application-specific operational knowledge (provision, backup, failover, upgrade). *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Operator pattern** — Custom Resource plus controller implementing domain automation. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Operator SDK** — Toolkit for building operators. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Option group** — RDS engine-specific additional feature configuration. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Order-processing platform** — Asynchronous API + worker system with PostgreSQL, Redis, SQS and S3. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Order state machine** — PENDING -> PROCESSING -> COMPLETED; FAILED; CANCELLED. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Origin Access Control (OAC)** — CloudFront feature restricting S3 origin access to CloudFront. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Origin (CDN)** — Backend CloudFront fetches from (S3, ALB, EC2). *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **OSI model** — 7-layer reference model: Application, Presentation, Session, Transport, Network, Data Link, Physical. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **OS-level virtualization** — Isolation provided by the OS kernel (namespaces + cgroups) instead of a hypervisor; the basis of containers. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Outlier detection** — Ejecting unhealthy endpoints from the load-balancing pool (supplement). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **OutOfSync** — ArgoCD status: Git desired state differs from cluster. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Output (Terraform)** — Value exposed after apply (terraform output). *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Ownership conflict** — Two tools managing the same resource and overwriting each other. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+
+## P
+
+- **PaaS** — Platform as a Service: provider manages more; you focus on the application. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Packet** — Small unit into which data is broken for transmission. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Parallel stages** — Independent stages running concurrently to reduce pipeline time. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Parameter group** — RDS container for database engine configuration parameters. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Parameter Store** — AWS Systems Manager store for configuration and some secrets. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Paravirtualization** — Guest uses virtualization-aware drivers instead of full hardware emulation, reducing overhead. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Partition key (PK)** — DynamoDB attribute determining data distribution. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Path-based routing** — Routing by URL path (e.g. /users/*). *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Path-based routing (Ingress)** — Routing by URL path to different Services. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **PeerAuthentication** — Istio resource configuring mTLS mode (supplement). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Percentile (p95/p99)** — Latency value below which that percent of requests fall. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **PersistentVolumeClaim (PVC)** — Request for storage by an application. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **PersistentVolume (PV)** — Cluster storage resource independent of Pod lifecycle. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **PID** — Process ID, unique per process. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Pilot light** — Minimal standby infrastructure scaled up during disaster. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Pipe** — `|` feeds the stdout of the left command into the stdin of the right one. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **pipefail** — `set -o pipefail`: a pipeline fails if any command in it fails. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Pipeline** — Sequence of automated steps from code change to deployment. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Platform engineering** — Building internal platforms exposing simple APIs (custom resources) over complex infrastructure. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Play** — A mapping of a host group to tasks within a playbook. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Playbook** — YAML file describing desired automation tasks for selected hosts. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Pod** — Smallest deployable unit; one or more tightly coupled containers sharing network/volumes. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **PodDisruptionBudget (PDB)** — Limits voluntary disruption of Pods to maintain availability. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Pod IP exhaustion** — Inability to schedule Pods because no IP addresses are available. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Pod-level security groups** — Associating AWS security groups with individual Pods. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Point-in-time recovery (PITR)** — Restoring a database to a chosen moment before an incident. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Policy as code** — Automated rules (OPA, Sentinel) blocking non-compliant infrastructure changes. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Port** — Number identifying an application/service on a machine. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **port-forward** — kubectl command forwarding a local port to a Pod/Service. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Port mapping (-p)** — `-p HOST_PORT:CONTAINER_PORT` publishes a container port on the host. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **post (Jenkins)** — Block defining actions after a pipeline: always, success, failure. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Postmortem (blameless)** — Review of an incident focused on systems and processes, not individuals. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Pre-copy migration** — Live-migration technique that repeatedly copies memory pages changed during the copy until the remainder is small enough to pause and transfer. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Prefix length** — The `/n` in CIDR: number of leading network bits; hosts = 2^(32-n). *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Presigned URL** — Time-limited URL granting temporary access to a specific S3 operation. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **prevent_destroy** — Lifecycle setting that errors on plans destroying the resource. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Principle of least privilege** — Give processes only the permissions they need. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Prisma** — TypeScript ORM with schema.prisma and migrations. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Private cloud** — Cloud infrastructure dedicated to one organization. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Private hosted zone** — Hosted zone resolving names only inside a VPC. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Private IP** — Address used inside private networks (10/8, 172.16/12, 192.168/16); not routable on the Internet. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Private subnet** — Subnet with no direct inbound Internet route. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Privileged instruction** — CPU operation only the kernel/hypervisor may execute (disable interrupts, modify privileged registers, touch hardware); the reason virtualization is hard. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **/proc** — Virtual filesystem exposing process and kernel information. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Process** — A running program. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **prom-client** — Node.js library exposing Prometheus metrics. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Prometheus** — Metrics monitoring system that scrapes /metrics endpoints. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Provider lock file** — .terraform.lock.hcl pinning provider versions and checksums; commit it. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Provider (Terraform)** — Plugin translating Terraform configuration to a platform's APIs (e.g. AWS). *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Provisioned concurrency** — Pre-initialized Lambda environments to avoid cold starts. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Prune** — ArgoCD option deleting cluster resources removed from Git. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Public cloud** — Provider-owned infrastructure shared by many isolated customers (AWS, Azure, GCP). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Public IP** — Globally routable address. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Public subnet** — Subnet whose route table has a route to an Internet Gateway. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Pub/Sub** — Publisher sends to a topic; multiple subscribers receive independently. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Pull** — Fetch plus integrate (merge or rebase). *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Pull Request** — GitHub collaboration/review mechanism built on branches and commits. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+
+## Q
+
+- **Queue** — Buffer of work between producers and consumers. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Queue depth / queue age** — Number of waiting messages / age of the oldest message. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **QUIC** — UDP-based transport used by HTTP/3. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+
+## R
+
+- **Rate-based rule** — WAF rule limiting requests per client over time. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Rate limiting** — Restricting request rate per client/service. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **RBAC** — Role-Based Access Control governing what a ServiceAccount (e.g. an operator) may do. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **RDS** — Relational Database Service: AWS-managed relational databases. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **RDS Proxy** — Managed connection pooling proxy for RDS. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Read-after-write problem** — Reading stale data from a replica immediately after writing to the primary. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Readiness** — Is the application ready to receive traffic? *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Readiness endpoint (/ready)** — Check that the app can serve traffic (dependencies reachable). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Readiness probe** — Check deciding whether a Pod receives traffic. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Read replica** — Copy of the database used to scale reads. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **ReadWriteOnce** — PVC access mode: read-write by a single node. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Rebase** — Replays commits on top of another base, rewriting history to be linear. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Rebuild-from-nothing test** — Exercise recreating the entire environment from Terraform, Git and backups. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Reconciliation** — Continuously making actual state match desired state. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Recreate deployment** — Stop old version, start new; simple but downtime. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Redirection** — Sending streams to files: `>` overwrite, `>>` append, `2>` stderr, `2>&1` merge. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **RED method** — Rate, Errors, Duration for request-driven services. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Reflog** — Log of where HEAD and branches pointed; used for recovery. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Region** — A geographic area containing cloud infrastructure. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Registry** — Service storing and distributing images (Docker Hub, GHCR, ECR). *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Relative path** — Path relative to the current directory. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Release (Helm)** — An installed instance of a chart in a cluster. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **.Release.Name** — Template object holding the release name. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Reliability** — Whether a system consistently performs correctly over time (distinct from being reachable). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Remote** — Reference to another Git repository; `origin` is a conventional name. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Remote state / backend** — Shared state storage (e.g. S3) used by teams. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Replicas** — Number of Pod copies desired. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **ReplicaSet** — Controller ensuring a set number of identical Pods; managed by Deployments. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Replication lag** — Delay before changes on the primary appear on replicas. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Request ID** — Identifier propagated through logs to correlate one request. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Reserved / commitment pricing** — Discounted pricing in exchange for committing to usage for a period. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Reset** — Moves branch pointer (and optionally index/worktree): --soft, --mixed, --hard. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Resource limit** — Maximum resources a container may use. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Resource request** — Resources reserved/used by the scheduler for placement. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Resource (Terraform)** — A managed infrastructure object declared in configuration. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Retry amplification** — Retries multiplying load on an already failing dependency. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Retry logic** — Application behavior of waiting and retrying when a dependency is unavailable. *([Ch 8](docs/02-containers/ch08-docker-production.md))*
+- **Retry storm** — Retries amplifying load on an overloaded dependency. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Reusable workflow** — Central workflow shared by many repositories. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Reverse proxy** — Proxy in front of servers/applications acting on their behalf (e.g. Nginx). *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Revert** — Creates a new commit that undoes an earlier commit. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Ring 0 / Ring 3** — CPU privilege levels: Ring 0 is most privileged (kernel); Ring 3 is least privileged (applications). *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Role (Ansible)** — Reusable directory structure of tasks, templates, handlers, variables. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Rollback**
+  - Returning to a previous version after a bad release. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+  - Reverting to a previous version after a bad release. *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **Roll forward (fix forward)** — Deploy a corrected version instead of reverting. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Rolling deployment** — Gradually replace instances with new version. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Rolling deployment (capstone)** — Gradually replace old Pods; failed readiness stalls the rollout. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Rolling update** — Gradual replacement of old Pods with new ones. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **rollout restart** — kubectl rollout restart deployment: recreate Pods to pick up changes. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **rollout undo** — kubectl command rolling a Deployment back to the previous revision. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Root cause analysis (RCA)** — Investigating the underlying cause after recovery. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Root module / child module** — Top-level configuration that calls reusable child modules. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **root (user)** — Superuser with extremely broad privileges; home is /root. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Round robin** — Load-balancing algorithm cycling through servers in order. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Route 53** — AWS DNS and domain-routing service. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Router** — Device that decides where packets go next. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Route table** — Rules mapping destination CIDRs to targets (local, igw, NAT). *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Routing table** — Rules mapping destination CIDRs to next hops. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **RPO** — Recovery Point Objective: how much data loss (measured in time) the business can tolerate. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **RTO** — Recovery Time Objective: how quickly service must be restored after a disaster. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **run**
+  - Step keyword that executes a shell command. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+  - Dockerfile instruction executed at image build time. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Runbook** — Documented operational procedure for responding to a situation. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Runner** — The machine/environment (ubuntu-latest etc.) that executes a job. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Running vs Ready** — A Pod can be running yet not ready to receive traffic. *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **Runtime (Lambda)** — Language environment for the function (e.g. Node.js). *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+
+## S
+
+- **S3** — Simple Storage Service: scalable object storage accessed via API. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **S3 event notification** — Event emitted when objects change, targeting Lambda/SQS/etc. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **SaaS** — Software as a Service: finished software you simply use (Gmail, Slack). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Saga** — Distributed transaction as local transactions with compensations. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **SAST** — Static Application Security Testing of source code. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Saved plan** — terraform plan -out file applied exactly with terraform apply. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Scalability** — Ability of a system to handle increasing workload by adding resources. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **Scale out / scale in** — Adding / removing instances. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Scheduled scaling** — Changing capacity at predictable times. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Scheduler** — Chooses which node runs each Pod. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Scrape** — Prometheus periodically pulling metrics from a target. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Scripted pipeline** — Free-form Groovy pipeline using node blocks. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Sealed Secrets** — Encrypted secrets safe to store in Git, decrypted in-cluster. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Secret (K8s)** — Object holding sensitive data (base64-encoded by default). *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **secretKeyRef** — Pod env source referencing a single key of a Secret. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Secret rotation** — Periodically replacing a secret value (Secrets Manager). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Secrets Manager** — AWS service for securely storing and retrieving secrets such as DB credentials. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **securityContext** — Pod/container security settings (runAsNonRoot, capabilities...). *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Security Group** — Stateful resource-level firewall in AWS. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Security Group referencing** — Allowing traffic whose source is another security group instead of a CIDR. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Security Hub** — Aggregated security findings (awareness). *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **Selector** — Query matching objects by labels. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Self-heal** — ArgoCD option reverting manual cluster changes to match Git. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Self-healing** — Automatic replacement of failed Pods to match desired replicas. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Self-managed nodes** — Worker nodes whose EC2 lifecycle you manage yourself. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Sensitive variable** — Variable whose value is hidden in CLI output (still stored in state). *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Serverless**
+  - You do not manage the underlying servers directly (e.g. AWS Lambda). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+  - You do not manage servers; the provider runs and scales execution. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Service** — Stable network endpoint for a set of Pods. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **ServiceAccount** — Kubernetes identity used by Pods. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Service discovery** — Finding services by stable name (Kubernetes DNS) instead of Pod IPs. *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Service mesh** — Infrastructure layer managing service-to-service communication (traffic, security, reliability, observability). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **set -e** — Bash option: exit when a command returns non-zero. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **set -u** — Bash option: error on unset variables. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **SEV levels** — Incident severity classification (SEV-1, SEV-2, SEV-3). *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Shadow page tables** — Older software technique where the hypervisor maintains mappings corresponding to guest page tables; expensive to maintain. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Shared Library (Jenkins)** — Reusable pipeline code shared across repositories (awareness). *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Shared responsibility model** — AWS secures the cloud; customer secures what they put in the cloud. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Shebang** — First line `#!/bin/bash` naming the interpreter that should execute the script. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Shell** — Program that takes your commands and passes them to the OS (e.g. bash). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Sidecar**
+  - Helper container in the same Pod as the main container. *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+  - Secondary container deployed alongside the application container for cross-cutting functionality. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Sidecar injection** — Automatic addition of the Envoy sidecar to Pods (istio-injection=enabled). *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Side-channel attack** — Information leak through shared hardware behaviour (CPU caches, timing, memory behaviour) despite logical isolation. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **SIGINT** — Interrupt signal, generated by Ctrl+C. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **SIGKILL** — Signal forcing termination without cleanup (`kill -9`). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Signed URLs / cookies** — CloudFront mechanism to restrict content to authorized users. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **SIGTERM** — Signal requesting graceful termination (default of `kill`). *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Single-table design** — Modeling several entity types in one DynamoDB table. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **SLA**
+  - Service Level Agreement: commitment/expectation about availability or performance. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+  - Service Level Agreement: formal customer commitment. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **SLI**
+  - Service Level Indicator: a measurement, e.g. successful requests / total requests. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+  - Service Level Indicator: a measurement. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **SLI types** — Availability, latency, correctness, freshness, durability. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **SLO**
+  - Service Level Objective: a target for an SLI, e.g. 99.9%. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+  - Service Level Objective: a target for an SLI. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Snapshot (RDS)** — Explicit point-in-time copy of an RDS database. *([Ch 13](docs/04-aws/ch13-rds-databases.md))*
+- **Snapshot (VM)** — Captured VM state/storage for later restore or cloning; not a complete backup strategy by itself. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **SNS** — Simple Notification Service: managed pub/sub topics. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **Soak test** — Long-duration test to find leaks and exhaustion. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Socket** — IP + port endpoint. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Sort key (SK)** — DynamoDB attribute ordering items within a partition key. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Source of truth** — The authoritative place for configuration (Git in GitOps). *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Span** — One timed operation within a trace. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **spec** — Section of a resource describing the desired state. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **Spike test** — Test with a sudden traffic increase. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Spot instances** — Discounted spare-capacity instances that can be interrupted. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **SQS** — Simple Queue Service: managed message queue. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **SRE** — Site Reliability Engineering: engineering approach to operating reliable production systems. *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **SR-IOV** — PCIe feature letting one physical device expose multiple virtual functions (VF1, VF2, ...) directly to different VMs. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **SSE-KMS** — Server-side encryption using AWS KMS keys with extra access control. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **SSE-S3** — Server-side encryption with S3-managed keys. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Stage / steps (Jenkins)** — A named phase of a pipeline and the commands inside it. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Staging area (index)** — Where you assemble exactly what the next commit contains (`git add`). *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **startupProbe** — Probe protecting slow-starting containers. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Stash** — Temporarily stores uncommitted changes. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **State drift** — Real infrastructure differing from Terraform configuration/state. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Stateful firewall** — Automatically allows return traffic of permitted connections. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **StatefulSet** — Controller for workloads needing stable identity and storage. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Stateless API** — API keeping no critical session state locally so any instance can serve any request. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Stateless architecture** — App servers keep no local session state; shared state is external. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Stateless container** — Container holding no important state; replaceable freely. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Stateless firewall** — Evaluates inbound and outbound rules independently (NACL). *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **State locking** — Preventing concurrent operations from corrupting state. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **State machine** — Workflow of states and transitions (Step Functions). *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **status** — Section of a resource describing the observed/current state. *([Ch 29](docs/05-kubernetes/ch29-crds-operators.md))*
+- **stderr** — Standard error stream (error output); redirect with `2>`. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **stdin** — Standard input stream of a process. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **stdout** — Standard output stream (normal output). *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Step** — One operation inside a job (a `run` command or a `uses` action). *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Step Functions**
+  - AWS workflow orchestration service (awareness). *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+  - Workflow orchestration using state machines. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Step scaling** — Add capacity in steps according to metric thresholds. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Sticky sessions** — Load balancer sending a user's requests to the same target. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Stop vs terminate (EC2)** — Stop can be restarted; terminate deletes the instance. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Storage class** — S3 tier optimized for an access pattern (Standard, Standard-IA, Glacier...). *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **StorageClass** — Describes how storage is dynamically provisioned. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **Storage optimized** — Instance family for high local storage performance. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **Stress test** — Test beyond expected capacity until degradation. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Structured logging** — Logging machine-readable (JSON) events with consistent fields. *([Ch 17](docs/04-aws/ch17-monitoring-security.md))*
+- **STS** — Security Token Service issuing temporary credentials; `aws sts get-caller-identity`. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **Subnet** — Subdivision of a VPC CIDR range that lives in a single AZ. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Subnetting** — Dividing a network into smaller segments. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Subset** — Named group of Pods (by labels) addressed by a DestinationRule. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **sudo** — Run a command with elevated privileges, subject to the user's sudo permissions. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Supply-chain security** — Protecting build/deploy tooling and artifacts from compromise. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Sync (ArgoCD)** — Applying the Git-defined state to the cluster. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **Synced** — ArgoCD status: cluster matches Git. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **systemd** — Init/service manager on modern Linux; controlled with systemctl. *([Ch 2](docs/01-foundations/ch02-linux.md))*
+- **Systems Manager Session Manager** — Shell access to instances without opening public SSH. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+
+## T
+
+- **Tag** — Named marker for an important point (release), e.g. v1.0.0. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Tags (Ansible)** — Labels to run only selected tasks. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Tail latency** — Latency of the slowest requests (p95, p99, p99.9). *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **tar** — Archiving tool; `-czf` create gzip archive, `-xzf` extract. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+- **Target group** — Set of backend targets (instances, IPs, containers) an ALB routes to. *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Target tracking scaling** — Keep a metric near a target (e.g. CPU 50%). *([Ch 14](docs/04-aws/ch14-load-balancing-scaling.md))*
+- **Target type (instance vs IP)** — Whether the load balancer targets nodes or Pod IPs directly. *([Ch 31](docs/05-kubernetes/ch31-advanced-eks.md))*
+- **Task (Ansible)** — One unit of work calling a module. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Task definition** — ECS blueprint: image, CPU, memory, ports, environment, roles, logging. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Task role vs task execution role** — App's AWS permissions vs ECS's permissions to pull images/write logs. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **TCP** — Transmission Control Protocol: reliable, ordered byte-stream transport. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **TCP/IP model** — 4-layer practical model: Application, Transport, Internet, Network Access. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Template (Ansible/Jinja2)** — File rendered with variables, e.g. app.conf.j2. *([Ch 28](docs/06-iac-config/ch28-ansible.md))*
+- **Terraform** — Infrastructure as Code tool for declaratively creating and managing infrastructure. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform apply** — Apply planned changes via provider APIs. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform destroy** — Destroy all resources managed by the configuration. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform import** — Adopt an existing resource into state. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform init** — Initialize working directory and download providers. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **.terraform.lock.hcl** — Dependency lock file for provider versions/checksums; commit it. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform plan** — Preview changes between configuration and known/real state. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform_remote_state** — Data source reading outputs from another state. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Terraform required_version** — Constraint on which Terraform CLI versions may run the configuration. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Terraform state** — File (terraform.tfstate) mapping configuration to real infrastructure. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **terraform state list/show** — List or inspect resources tracked in state. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **terraform state rm** — Removes a resource from state without deleting the real resource. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Terraform workspace** — Separate state instance for the same configuration. *([Ch 32](docs/06-iac-config/ch32-advanced-terraform.md))*
+- **Three-tier architecture** — Presentation, application and data tiers in separate network layers. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **Three-tier production architecture** — Edge (DNS/CDN/WAF/LB) -> application (EKS Pods) -> data (RDS/Redis/S3). *([Ch 23](docs/08-production/ch23-production-architecture-troubleshooting.md))*
+- **Three-way handshake** — SYN, SYN-ACK, ACK sequence establishing a TCP connection. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Three-way merge** — Merge using the common ancestor and both branch tips; usually creates a merge commit. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Timeout** — Maximum time to wait for a call before failing. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Timeout budget** — Overall time allowance divided across calls in a request path. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **TLB (Translation Lookaside Buffer)** — CPU cache of recent address translations that avoids repeated page-table walks. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **TLS** — Transport Layer Security: confidentiality, integrity, server authentication. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **TLS termination** — Decrypting TLS at a load balancer, reverse proxy or CDN. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Token bucket** — Rate-limiting algorithm allowing bursts with a refill rate. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Trace ID** — Identifier shared by all spans of one request. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Traces** — Records of a single request's path and time across services. *([Ch 22](docs/07-observability-sre/ch22-observability-reliability.md))*
+- **Transactional outbox** — Writing events to a DB table in the same transaction, then publishing them reliably. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **Trigger (on)** — Event that starts a workflow (push, pull_request, ...). *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Trunk-based development** — Frequent integration of small changes into main/trunk using short-lived branches. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **TTL** — Time To Live: how long resolvers may cache a DNS answer. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **TXT record** — DNS record with arbitrary text (verification etc.). *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Type 1 hypervisor (bare-metal)** — Hypervisor that runs directly on hardware (e.g. VMware ESXi, Hyper-V, Xen, KVM-based environments); common in data centers. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Type 2 hypervisor** — Hypervisor that runs as an application on a host OS (e.g. VirtualBox, VMware Workstation, Parallels); convenient for desktop development. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Type check** — tsc --noEmit: verify TypeScript types without producing output. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+
+## U
+
+- **UDP** — User Datagram Protocol: connectionless, no delivery guarantee, low overhead. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Unit / Integration / E2E tests** — Small pieces / multiple components together / whole system from user view. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Upstream** — Conventional remote name for the original repository of a fork. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **User data** — Script executed at instance launch for bootstrapping. *([Ch 10](docs/04-aws/ch10-ec2-compute.md))*
+- **uses** — Step keyword that runs an existing Action (e.g. actions/checkout@v4). *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+
+## V
+
+- **.Values** — Template object exposing values supplied to the chart. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Values precedence** — Defaults < values files < --set; the most specific override wins. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **values.yaml** — Default configuration values of a Helm chart. *([Ch 25](docs/05-kubernetes/ch25-helm.md))*
+- **Variable (Terraform)** — Input parameter of a configuration (var.name). *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+- **Vault** — HashiCorp secrets-management system. *([Ch 26](docs/03-cicd-gitops/ch26-gitops-argocd.md))*
+- **vCPU** — Virtual CPU: an execution context scheduled by the hypervisor onto physical CPUs; not necessarily a dedicated physical core. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Versioning** — Keeping multiple versions of an S3 object. *([Ch 11](docs/04-aws/ch11-s3-storage.md))*
+- **Vertical scaling (scale up)** — Making one machine more powerful (more CPU/RAM). *([Ch 1](docs/01-foundations/ch01-cloud-devops-fundamentals.md))*
+- **VirtIO** — Common paravirtualized driver standard for virtual network and block devices in Linux virtualization. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Virtual disk (VMDK / VHDX / QCOW2 / raw)** — File or volume format that backs a VM's disk as an abstraction over underlying storage. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Virtualization** — Creating an abstraction of physical computing resources so multiple isolated virtual machines can share physical hardware. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Virtual NIC** — Virtual network interface (with MAC/IP) presented to the guest and forwarded by the hypervisor. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **VirtualService** — Istio resource defining traffic routing rules. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*
+- **Virtual switch** — Hypervisor-provided switch connecting VMs and the physical NIC; can do switching, VLANs, filtering, bridging. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Visibility timeout** — Time an SQS message stays hidden after being received. *([Ch 15](docs/04-aws/ch15-lambda-serverless-messaging.md))*
+- **VM escape** — Attack in which code in a guest breaks out through a hypervisor vulnerability to the host and possibly other VMs. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **VM exit** — Transition from guest execution into the hypervisor when an operation needs hypervisor handling; has overhead, so frequent exits hurt performance. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **VM isolation** — Separation of CPU, memory, storage, network and devices between VMs; the hypervisor is a critical security boundary. *([Ch 36](docs/01-foundations/ch36-virtualization-internals.md))*
+- **Volume (Docker)** — Docker-managed persistent storage independent of container lifecycle. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Volume (Kubernetes)** — Storage attached to a Pod and mounted into containers. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **volumeMount** — Mounting a volume at a path inside a container. *([Ch 19](docs/05-kubernetes/ch19-kubernetes-config-storage.md))*
+- **VPC** — Virtual Private Cloud: logically isolated AWS network. *([Ch 9](docs/04-aws/ch09-aws-fundamentals-iam.md))*
+- **VPC endpoint** — Private connectivity from a VPC to supported AWS services. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+- **VPC Flow Logs** — Logs of IP traffic to/from network interfaces. *([Ch 12](docs/04-aws/ch12-vpc-networking.md))*
+
+## W
+
+- **WAF** — Web Application Firewall filtering HTTP requests (SQLi, XSS, bots, rate limits). *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Warm standby** — Reduced-capacity running copy scaled up during disaster. *([Ch 34](docs/07-observability-sre/ch34-advanced-sre.md))*
+- **Web ACL** — Collection of WAF rules associated with a CloudFront distribution or ALB. *([Ch 16](docs/04-aws/ch16-route53-cloudfront-waf.md))*
+- **Webhook** — HTTP callback sent by GitHub to trigger a Jenkins pipeline. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **Weighted load balancing** — Algorithm giving servers different traffic shares. *([Ch 4](docs/01-foundations/ch04-networking.md))*
+- **Well-Architected Framework** — AWS design pillars: operational excellence, security, reliability, performance, cost, sustainability. *([Ch 33](docs/04-aws/ch33-advanced-aws-backend.md))*
+- **withCredentials** — Pipeline step exposing a credential to commands as a variable. *([Ch 27](docs/03-cicd-gitops/ch27-jenkins-advanced-cicd.md))*
+- **WORKDIR** — Dockerfile instruction setting the working directory. *([Ch 7](docs/02-containers/ch07-docker-fundamentals.md))*
+- **Worker idempotency** — Processing each eventId at most once effectively by recording processed events. *([Ch 35](docs/08-production/ch35-devops-capstone.md))*
+- **Worker node** — Machine that runs workloads (kubelet, runtime, Pods). *([Ch 18](docs/05-kubernetes/ch18-kubernetes-fundamentals.md))*
+- **Workflow** — A YAML-defined automated process in GitHub Actions containing one or more jobs. *([Ch 6](docs/03-cicd-gitops/ch06-cicd-github-actions.md))*
+- **Working directory (working tree)** — Your actual project files on disk. *([Ch 5](docs/01-foundations/ch05-git-github.md))*
+- **Workload identity** — Giving Pods AWS permissions via IAM identity instead of static keys (IRSA / Pod Identity). *([Ch 20](docs/05-kubernetes/ch20-kubernetes-networking-scaling.md))*
+- **Workspace (Terraform)** — Separate state instances within one configuration. *([Ch 21](docs/06-iac-config/ch21-terraform.md))*
+
+## X
+
+- **xargs** — Turns input lines into command arguments. *([Ch 3](docs/01-foundations/ch03-bash-automation.md))*
+
+## Z
+
+- **Zero trust** — Security model not trusting network location; requires identity, authentication, authorization and encryption. *([Ch 30](docs/05-kubernetes/ch30-service-mesh-istio.md))*

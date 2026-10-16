@@ -1,0 +1,8 @@
+- name: Build frontend
+  run: |
+    npm ci
+    npm run build
+
+- name: Upload to S3
+  run: |
+    aws s3 sync dist/ s3://my-frontend-bucket

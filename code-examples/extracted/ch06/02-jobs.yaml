@@ -1,0 +1,9 @@
+jobs:
+  test:
+    ...
+
+  security:
+    ...
+
+  build:
+    ...

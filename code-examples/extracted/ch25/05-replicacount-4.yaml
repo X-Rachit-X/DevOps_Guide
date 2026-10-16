@@ -1,0 +1,11 @@
+replicaCount: 4
+
+image:
+  repository: 123456789.dkr.ecr.ap-south-1.amazonaws.com/my-api
+  tag: "1.2.0"
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 3000

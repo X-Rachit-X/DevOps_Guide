@@ -1,0 +1,10 @@
+apiVersion: database.example.com/v1
+kind: PostgreSQLCluster
+
+metadata:
+  name: production
+
+spec:
+  version: "16"
+  replicas: 3
+  storage: 100Gi

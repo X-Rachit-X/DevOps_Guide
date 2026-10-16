@@ -1,0 +1,36 @@
+---
+- name: Configure API servers
+
+  hosts: web
+  become: true
+
+  vars:
+    app_port: 3000
+
+  tasks:
+
+    - name: Install required packages
+      apt:
+        name:
+          - nginx
+          - git
+          - nodejs
+        state: present
+        update_cache: true
+
+    - name: Create application directory
+      file:
+        path: /opt/my-api
+        state: directory
+        mode: '0755'
+
+    - name: Copy application
+      copy:
+        src: ./dist/
+        dest: /opt/my-api/
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true

@@ -1,0 +1,26 @@
+---
+- name: Configure Node.js server
+
+  hosts: web
+  become: true
+
+  tasks:
+
+    - name: Install required packages
+      apt:
+        name:
+          - git
+          - nginx
+        state: present
+        update_cache: true
+
+    - name: Install Node.js
+      apt:
+        name: nodejs
+        state: present
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true

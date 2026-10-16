@@ -1,0 +1,7 @@
+- name: Create application directory
+  file:
+    path: /opt/my-api
+    state: directory
+    owner: app
+    group: app
+    mode: '0755'

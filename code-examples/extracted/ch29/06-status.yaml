@@ -1,0 +1,4 @@
+status:
+  conditions:
+    - type: Ready
+      status: "True"

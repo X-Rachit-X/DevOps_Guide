@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: storage-app
+
+spec:
+  containers:
+    - name: app
+      image: nginx
+
+      volumeMounts:
+        - name: persistent-data
+          mountPath: /data
+
+  volumes:
+    - name: persistent-data
+      persistentVolumeClaim:
+        claimName: api-storage

@@ -1,0 +1,8 @@
+stage('Deploy') {
+    steps {
+        sh '''
+          kubectl set image deployment/my-api \
+            my-api=my-api:${GIT_COMMIT}
+        '''
+    }
+}

@@ -1,0 +1,4 @@
+source:
+  repoURL: ...
+  targetRevision: main
+  path: apps/my-api

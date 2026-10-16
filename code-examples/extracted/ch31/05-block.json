@@ -1,0 +1,6 @@
+{
+  "level": "info",
+  "requestId": "abc123",
+  "service": "order-api",
+  "message": "Order created"
+}

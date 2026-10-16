@@ -1,0 +1,5 @@
+kind: Kafka
+metadata:
+  name: events
+spec:
+  replicas: 3

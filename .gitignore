@@ -1,0 +1,16 @@
+# dependencies and build output
+node_modules/
+dist/
+__pycache__/
+*.pyc
+
+# build/scratch working directory — not needed for readers
+_work/
+
+# raw source archive — large files not needed in the repo
+source-archive/
+
+# secrets / local env
+.env
+.env.*
+!.env.example
